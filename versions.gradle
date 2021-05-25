@@ -5,7 +5,7 @@ versions.r2SharedKotlin = "1.0.4-2"
 versions.r2StreamerKotlin = "1.0.4-2"
 
 versions.projectVersionCode = 2
-versions.projectVersionName = "1.0"
+versions.projectVersionName = "1.1"
 
 versions.androidMinSdk = 19
 versions.androidCompileSdk = 29
