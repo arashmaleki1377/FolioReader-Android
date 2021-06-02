@@ -46,15 +46,23 @@ android {
     lintOptions {
         abortOnError false
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation "androidx.test.ext:junit:1.1.1"
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation "androidx.test.ext:junit:1.1.1"
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation project(':folioreader')
     //implementation "com.folioreader:folioreader:$versions.folioreaderSdk"
