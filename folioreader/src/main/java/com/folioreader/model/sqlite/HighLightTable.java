@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.text.TextUtils;
 import android.util.Log;
+
 import com.folioreader.Constants;
 import com.folioreader.model.HighLight;
 import com.folioreader.model.HighlightImpl;
@@ -114,10 +115,12 @@ public class HighLightTable {
         String query = "SELECT " + COL_RANGY + " FROM " + TABLE_NAME + " WHERE " + COL_PAGE_ID + " = \"" + pageId + "\"";
         Cursor c = DbAdapter.getHighlightsForPageId(query, pageId);
         List<String> rangyList = new ArrayList<>();
-        while (c.moveToNext()) {
-            rangyList.add(c.getString(c.getColumnIndex(COL_RANGY)));
+        if (c != null) {
+            while (c.moveToNext()) {
+                rangyList.add(c.getString(c.getColumnIndex(COL_RANGY)));
+            }
+            c.close();
         }
-        c.close();
         return rangyList;
     }
 
